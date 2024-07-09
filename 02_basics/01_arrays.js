@@ -27,7 +27,16 @@ let newArr1 = new Array(2,6,9,0,7,1)
 // console.log(newArr1.indexOf(2)); 
 
 
-let newArr2 = Array(newArr1.join())
+let newArr2 = newArr1.join()
+// console.log(newArr1);
+// console.log(newArr2)
+// console.log(typeof newArr2)
+
+// slice
+ console.log("a", newArr1.slice(1,3));
+ console.log(newArr1);
+
+
+//  splice
+console.log("b", newArr1.splice(1,3));
 console.log(newArr1);
-console.log(newArr2)
-console.log(typeof newArr2)
