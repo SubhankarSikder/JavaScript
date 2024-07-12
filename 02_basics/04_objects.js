@@ -52,4 +52,19 @@ const users = [
 // console.log(Object.entries(newUser));
 
 
-console.log(newUser.hasOwnProperty("days"));
+// console.log(newUser.hasOwnProperty("days"));
+
+
+
+const course = {
+    name : "physics",
+    price : 1000,
+    instructor : "ulluck"
+}
+
+// console.log(course.instructor)
+
+const {price: pr} = course
+// console.log(pr);
+
+
