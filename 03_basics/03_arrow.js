@@ -15,5 +15,7 @@ const user = {
 
 
 // const ulluck = (value1, value2) => {return value1 + value2}
-const ulluck = (value1, value2) => (value1 + value2)
+// const ulluck = (value1, value2) => (value1 + value2)
+
+const ulluck = (value1, value2) => ({username: "ulluck"})
 console.log(ulluck(5,2));
