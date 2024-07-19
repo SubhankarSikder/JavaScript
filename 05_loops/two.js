@@ -1,11 +1,20 @@
 let myArray = [1, 5 ,2, "ulluck", 7, "singh"]
 let myNewArray = [1,5,7,9,2,0,41]
+let newArr= [1,2,3,4,12]
+let inVal =0
 
 
 // let newValues = myNewArray.filter( (item) => (item > 4) )
 // console.log(newValues);
 
+// let ulluck = myNewArray.map(item => item+10)
 
+// let ulluck = myNewArray.filter(items => ((items % 2)==0)).map(items => items+5)
+// console.log(ulluck);
+
+
+let ulluck = newArr.reduce((x,y) => x+y,inVal)
+console.log(ulluck);
 
 // let newValues = []
 // myNewArray.forEach( (item) => {
@@ -75,15 +84,15 @@ let apiVar = {
     }
 }
 
-apiVar.results.forEach(items => {
-    console.log(`gender is ${items.name.first}`);
-    console.log(items.location.street.name);
-    console.log(items.location.state);
-    console.log(items.location.coordinates.latitude);
-    console.log(items.location.timezone.description);
-    console.log(items.login.password);
-    console.log(items.dob.age);
-    console.log(items.picture.large);
+// apiVar.results.forEach(items => {
+//     console.log(`gender is ${items.name.first}`);
+//     console.log(items.location.street.name);
+//     console.log(items.location.state);
+//     console.log(items.location.coordinates.latitude);
+//     console.log(items.location.timezone.description);
+//     console.log(items.login.password);
+//     console.log(items.dob.age);
+//     console.log(items.picture.large);
     
-})
-console.log(apiVar.info.seed)
+// })
+// console.log(apiVar.info.seed)
