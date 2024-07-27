@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="programs">
+        <li>javaScript</li>
+    </ul>
+</body>
+<script>
+    function addLang(langName){
+       const li = document.createElement("li")
+       li.innerHTML = langName
+       document.querySelector('.programs').appendChild(li)
+    }
+
+    addLang("python")
+    addLang('java')
+
+    function addOptimisedLang(langName){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))// 'addLang' uses 'innerHTML' to set the content of the li, which can be less efficient and pose security risks if the input is not properly sanitized.  'addOptimisedLang' uses 'createTextNode' to create a text node, which is a safer and potentially more efficient approach as it avoids parsing HTML.
+        
+        
+        
+        document.querySelector('.programs').appendChild(li)
+    }
+    addOptimisedLang('c++')
+
+
+    //edit
+    function editElements(newElement,index){
+        const oldEle = document.querySelector(`li:nth-child(${index})`)
+        const newEle = document.createElement('li')
+        newEle.textContent = newElement
+        oldEle.replaceWith(newEle)
+    }
+    editElements('mongoDB',1)
+    editElements('ruby',1)
+
+
+    //remove elements
+
+    function removeElements(index){
+        document.querySelector(`li:nth-child(${index})`).remove()
+
+    }
+    removeElements(1)
+    removeElements(3)
+</script>
+</html>
