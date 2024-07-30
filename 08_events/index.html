@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent{
+            background-color: yellow;
+        }
+        .child{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent" id="parent">
+        <h1>Parent</h1>
+        <div class="child" id="child1">Child 1</div>
+        <div class="child" id="child2">Child 2</div>
+        <div class="child" id="child3">Child 3</div>
+    </div>
+</body>
+<script>
+    //example of event bubbling, where traversal occurs from child to parent elements(in this case, child1 to parent)
+
+    // document.getElementById("child1").addEventListener('click', () => {
+    //     console.log('child 1 clicked');
+    // })
+    // document.getElementById("parent").addEventListener('click', () => {
+    //     console.log('parent reached');
+    // })
+
+
+
+
+
+
+    //example of event capturing, where traversal occurs from parent to child elements(in this case parent to child1)
+
+    // document.getElementById("child1").addEventListener('click', () => {
+    //     console.log('child 1 clicked');
+    // }, true)
+    // document.getElementById("parent").addEventListener('click', () => {
+    //     console.log('parent reached first');
+    // },true)
+
+
+
+
+
+
+
+    // removing elements through event
+
+    document.getElementById('parent').addEventListener('click', (e) => {
+        // console.log(e);
+        // console.log(e.target);
+        // console.log(e.target.parentNode);
+        // const deleteIt = e.target
+        // deleteIt.remove()
+        // e.target.remove()
+        // console.log(e.target.tagName)
+        if(e.target.className === 'child'){
+            e.target.remove()
+        }
+        else{
+            alert("Cannot remove this element")
+        }
+    })
+</script>
+</html>
