@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>New Document</h1>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+</body>
+<script>
+    let newVal = function(item){
+        console.log(item, Date.now());
+        
+    }
+    let val2 = null 
+    document.querySelector('#start').addEventListener('click', () => {
+        if(val2 === null){
+            console.log('started');
+            val2 = setInterval(newVal,1000, 'hi user')
+        }
+    })
+    document.querySelector('#stop').addEventListener('click', () => {
+        if(val2 !== null){
+            console.log('stopped');
+            clearInterval(val2)
+            val2 = null
+        }
+       
+    })
+</script>
+<script>
+    
+
+   
+</script>
+</html>

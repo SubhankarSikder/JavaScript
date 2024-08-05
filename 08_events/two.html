@@ -9,4 +9,20 @@
     <h1>New Document</h1>
     <button id="stop">stop</button>
 </body>
+<script>
+     document.querySelector('h1').innerHTML = 'new ulluck'
+
+    let newVal = setTimeout(()=> (console.log("ulluck")
+    ),2000)
+
+    // clearTimeout(newVal)
+
+    document.querySelector('button').addEventListener('click', () => {
+        console.log('stopped');
+        clearTimeout(newVal)
+        
+    })
+
+   
+</script>
 </html>
