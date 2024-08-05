@@ -11,17 +11,36 @@
 </body>
 <script>
     function randomColor(){
+        const range = '0123456789ABCDEF'
         let color = '#'
         for (let i = 0; i < 6; i++) {
-            color+= Math.floor(Math.random() * 10)  
+            color+= range[Math.floor(Math.random() * 16)]  
         }
         return color
     }
 
-    document.querySelector('#start').addEventListener('click', () => {
-        let color = randomColor()
-        document.body.style.backgroundColor =color
-        console.log('Generated Color:', color);
-    })
+    // document.querySelector('#start').addEventListener('click', () => {
+    //     let color = randomColor()
+    //     function changedColor(){
+    //         document.body.style.backgroundColor =color
+    //     }
+    //     setInterval(changedColor,1000)
+    //     console.log('Generated Color:', color);
+    // })
+
+    document.querySelector('#start').addEventListener('click', onClicking)
+    document.querySelector('#stop').addEventListener('click', onStopping)
+
+    let intervalId
+    function onClicking(){
+        function changeColor(){
+            const color = randomColor()
+            document.body.style.backgroundColor = color
+        }
+        intervalId = setInterval(changeColor,1000)
+    }
+    function onStopping(){
+        clearInterval(intervalId)
+    }
 </script>
 </html>
